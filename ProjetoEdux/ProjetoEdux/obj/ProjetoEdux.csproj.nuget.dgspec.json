@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mercatudo\\source\\repos\\ProjetoEdux\\ProjetoEdux\\ProjetoEdux.csproj": {}
+    "C:\\Users\\mercatudo\\Documents\\ProjetoAPIEdux\\APiEdux\\ProjetoEdux\\ProjetoEdux\\ProjetoEdux.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mercatudo\\source\\repos\\ProjetoEdux\\ProjetoEdux\\ProjetoEdux.csproj": {
+    "C:\\Users\\mercatudo\\Documents\\ProjetoAPIEdux\\APiEdux\\ProjetoEdux\\ProjetoEdux\\ProjetoEdux.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mercatudo\\source\\repos\\ProjetoEdux\\ProjetoEdux\\ProjetoEdux.csproj",
+        "projectUniqueName": "C:\\Users\\mercatudo\\Documents\\ProjetoAPIEdux\\APiEdux\\ProjetoEdux\\ProjetoEdux\\ProjetoEdux.csproj",
         "projectName": "ProjetoEdux",
-        "projectPath": "C:\\Users\\mercatudo\\source\\repos\\ProjetoEdux\\ProjetoEdux\\ProjetoEdux.csproj",
+        "projectPath": "C:\\Users\\mercatudo\\Documents\\ProjetoAPIEdux\\APiEdux\\ProjetoEdux\\ProjetoEdux\\ProjetoEdux.csproj",
         "packagesPath": "C:\\Users\\mercatudo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mercatudo\\source\\repos\\ProjetoEdux\\ProjetoEdux\\obj\\",
+        "outputPath": "C:\\Users\\mercatudo\\Documents\\ProjetoAPIEdux\\APiEdux\\ProjetoEdux\\ProjetoEdux\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mercatudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,11 +52,19 @@
               "target": "Package",
               "version": "[3.1.8, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.8, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
             }
           },
           "imports": [
