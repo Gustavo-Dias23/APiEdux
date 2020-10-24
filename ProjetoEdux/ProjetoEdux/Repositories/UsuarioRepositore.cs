@@ -12,14 +12,14 @@ namespace ProjetoEdux.Repositories
     public class UsuarioRepositore : IUsuario
     {
 
-        Context conexao = new Context();
+        EduxContext conexao = new EduxContext();
 
         SqlCommand cmd = new SqlCommand();
 
         public Usuario Alterar(Usuario a, int id)
         {
+            conexao.Conectar();
 
-            
             cmd.CommandText = "UPDATE Usuario " +
                 "SET Nome = @Nome, " +
                 "Email = @Email " +
@@ -30,6 +30,7 @@ namespace ProjetoEdux.Repositories
 
             cmd.ExecuteNonQuery();
 
+            conexao.Desconectar();
 
             return a;
 
@@ -37,6 +38,7 @@ namespace ProjetoEdux.Repositories
 
         public Usuario BuscarPorID(int Id)
         {
+            conexao.Conectar();
             cmd.CommandText = "SELECT * FROM Usuario WHERE IdUsuario = @id";
             cmd.Parameters.AddWithValue("@id", Id);
 
@@ -51,6 +53,7 @@ namespace ProjetoEdux.Repositories
                 usuario.Email = dados.GetValue(2).ToString();
             }
 
+            conexao.Desconectar();
 
             return usuario;
 
@@ -58,6 +61,7 @@ namespace ProjetoEdux.Repositories
 
         public Usuario Cadastrar(Usuario a)
         {
+            conexao.Conectar();
             cmd.CommandText =
                 "INSERT INTO USuario (Nome, Email Senha)" +
                 "VALUES" +
@@ -67,16 +71,19 @@ namespace ProjetoEdux.Repositories
             cmd.Parameters.AddWithValue("@Senha", a.Senha);
 
             cmd.ExecuteNonQuery();
-
+            conexao.Desconectar();
 
             return a;
         }
 
         public Usuario Excluir(Usuario a, int id)
         {
+            conexao.Conectar();
             cmd.CommandText = "DELETE Usuario " +
                 "WHERE IdUsuario = @id";
             cmd.Parameters.AddWithValue("@id", id);
+
+            conexao.Desconectar();
 
             return a;
 
@@ -84,6 +91,7 @@ namespace ProjetoEdux.Repositories
 
         public List<Usuario> ListarTodos()
         {
+            conexao.Conectar();
 
             cmd.CommandText = "SELECT * FROM Usuario";
 
@@ -102,6 +110,8 @@ namespace ProjetoEdux.Repositories
                     }
                 );
             }
+
+            conexao.Desconectar();
 
             return usuario;
 
