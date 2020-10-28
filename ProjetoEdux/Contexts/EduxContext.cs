@@ -37,7 +37,7 @@ namespace ProjetoEdux.Contexts
         {
         }
 
-        public virtual DbSet<Alunoturma> AlunoTurma { get; set; }
+        public virtual DbSet<AlunoTurma> AlunoTurma { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Curso> Curso { get; set; }
         public virtual DbSet<Curtida> Curtida { get; set; }
@@ -60,7 +60,7 @@ namespace ProjetoEdux.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Alunoturma>(entity =>
+            modelBuilder.Entity<AlunoTurma>(entity =>
             {
                 entity.HasKey(e => e.IdAlunoTurma)
                     .HasName("PK__ALUNOTUR__8F3223BD14B9E985");
@@ -72,12 +72,12 @@ namespace ProjetoEdux.Contexts
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.IdTurmaNavigation)
-                    .WithMany(p => p.Alunoturma)
+                    .WithMany(p => p.AlunoTurma)
                     .HasForeignKey(d => d.IdTurma)
                     .HasConstraintName("FK__ALUNOTURM__IdTur__48CFD27E");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
-                    .WithMany(p => p.Alunoturma)
+                    .WithMany(p => p.AlunoTurma)
                     .HasForeignKey(d => d.IdUsuario)
                     .HasConstraintName("FK__ALUNOTURM__IdUsu__47DBAE45");
             });
